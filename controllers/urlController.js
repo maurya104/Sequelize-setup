@@ -1,9 +1,8 @@
 const { Url } = require('../models');
 const { nanoid } = require('nanoid-cjs'); // For generating a unique short code
 
-
 // This function creates a short url for a new url , but if shortUrl of new url 
-//already present in the database then it will give the same shortUrl  
+// already present in the database then it will give the same shortUrl  
 exports.createShortUrl = async (req, res) => {
   const { originalUrl } = req.body;
 
@@ -20,7 +19,6 @@ exports.createShortUrl = async (req, res) => {
     res.status(201).json({
       message: 'Short URL created successfully',
       shortUrl: url.shortUrl,
-
     })
   }
 
@@ -42,7 +40,6 @@ exports.createShortUrl = async (req, res) => {
       res.status(500).json({ error: err.message });
     }
   }
-
 };
 
 // This function returns the original website url in json format
