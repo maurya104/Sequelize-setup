@@ -4,12 +4,14 @@ const db = require('./models');
 require('dotenv').config();
 
 const userRoutes = require('./routes/userRoutes');
+const urlRoutes = require('./routes/urlRoutes');
 
 const app = express();
 app.use(bodyParser.json());
 
 // Routes
 app.use('/users', userRoutes);
+app.use('/', urlRoutes);
 
 // Database connection
 db.sequelize

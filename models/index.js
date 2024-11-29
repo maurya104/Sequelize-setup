@@ -8,5 +8,6 @@ db.sequelize = sequelize;
 
 // Import models here
 db.User = require('./user')(sequelize, Sequelize);
+db.Url = require('./url')(sequelize, Sequelize);
 
 module.exports = db;

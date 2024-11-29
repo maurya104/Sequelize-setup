@@ -1,17 +1,18 @@
-// Model for creating user in database
+// Model for creating short url in the database
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define('User', {
+  const Url = sequelize.define('Url', {
 
-    name: {
+    originalUrl: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email: {
+
+    shortUrl: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
+      unique: true,
     },
   });
 
-  return User;
+  return Url;
 };
